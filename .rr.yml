@@ -1,0 +1,12 @@
+http:
+  address: ":8080"
+  workers:
+    command: "php psr-worker.php"
+    pool:
+      numWorkers: 3
+static:
+  dir:   "public"
+  forbid: [".php", ".htaccess"]
+headers:
+    response:
+        "Cache-Control": "no-cache"
