@@ -43,8 +43,7 @@
         "yiisoft/html": "^3.0@dev",
         "yiisoft/security": "^3.0@dev",
         "cycle/orm": "^1.1",
-        "cycle/annotated": "^2.0"
-        "yiisoft/security": "^3.0@dev",
+        "cycle/annotated": "^2.0",
         "spiral/roadrunner": "^1.4"
     },
     "require-dev": {

@@ -50,5 +50,5 @@ return [
     MailerInterface::class => new MailerFactory(),
 
     // Cycle ORM
-    ORMInterface::class => new CycleOrmFactory(),
+    //ORMInterface::class => new CycleOrmFactory(),
 ];

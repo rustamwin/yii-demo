@@ -39,26 +39,26 @@ class CycleOrmFactory
 
         $dbal = new DatabaseManager(
             new DatabaseConfig([
-                'default' => 'default',
-                'databases' => [
-                    'default' => ['connection' => 'sqlite']
-                ],
-                'connections' => [
-                    'sqlite' => [
-                        'driver' => SQLiteDriver::class,
-                        'connection' => 'sqlite:' . $databasePath,
-                        'username' => '',
-                        'password' => '',
-                    ]
-                ]
-            ])
+                                   'default' => 'default',
+                                   'databases' => [
+                                       'default' => ['connection' => 'sqlite'],
+                                   ],
+                                   'connections' => [
+                                       'sqlite' => [
+                                           'driver' => SQLiteDriver::class,
+                                           'connection' => 'sqlite:' . $databasePath,
+                                           'username' => '',
+                                           'password' => '',
+                                       ],
+                                   ],
+                               ])
         );
 
         // autoload annotations
         AnnotationRegistry::registerLoader('class_exists');
 
         $schema = $this->getSchema($entityPaths, $dbal);
-
+        error_log("ORM started");
         return (new ORM(new Factory($dbal)))->withSchema($schema);
     }
 

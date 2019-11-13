@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller;
+use Cycle\ORM\ORMInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -12,11 +13,11 @@ class SiteController extends Controller
         return 'site';
     }
 
-    public function index(): ResponseInterface
+    public function index(ORMInterface $ORM): ResponseInterface
     {
         $response = $this->responseFactory->createResponse();
 
-        $output = $this->render('index');
+        $output = $this->render('index', ['orm' => $ORM]);
 
         $response->getBody()->write($output);
         return $response;
